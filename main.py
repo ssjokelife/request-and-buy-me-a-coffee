@@ -25,6 +25,8 @@
 
 import streamlit as st
 
+import utils
+
 # 'Buy Me a Coffee' 버튼 HTML 및 CSS 코드
 buy_me_a_coffee_button = """
 <div style="position: fixed; bottom: 70px; right: 10px;">
@@ -39,7 +41,7 @@ st.markdown(buy_me_a_coffee_button, unsafe_allow_html=True)
 
 st.title("Request and Buy Me a Coffee First")
 
-st.markdown("""
+st.markdown(f"""
 Welcome to the "Request and Buy Me a Coffee First" site.
 The purpose of this site is quite simple.
 The primary goal is to get the most coffee in South Korea.
@@ -52,21 +54,41 @@ I hope that as my income increases, so will my skills.
 Again, I'm confident that will happen.
 So, "Request and Buy Me a Coffee First."
 
-Here are the steps to do so:
 
+""")
+
+st.markdown(f"""
+Here are the steps to do so:
+<br>
 1. Click the Buy me a coffee button.
-""")
-st.image('images/buy_me_a_coffee_button.png', caption='Click the Buy me a coffee button.')
-st.markdown("""
+<br>
+<a href="https://www.buymeacoffee.com/ssjokelife" target="_blank">
+    <img src="data:image/png;base64,{utils.get_base64_encoded_image('images/buy_me_a_coffee_button.png')}" alt="Click the Buy me a coffee button">
+</a>
+<br>
+""", unsafe_allow_html=True)
+
+st.markdown(f"""
+<br>
 2. Select the number of coffee cups and click the Support button.
-""")
-st.image('images/buy_me_a_coffee.png', caption='Select the number of coffee cups~')
-st.markdown("""
+<br>
+<a href="https://www.buymeacoffee.com/ssjokelife" target="_blank">
+    <img src="data:image/png;base64,{utils.get_base64_encoded_image('images/buy_me_a_coffee.png')}" alt="Select the number of coffee cups~">
+</a>
+<br>
+""", unsafe_allow_html=True)
+
+st.markdown(f"""
+<br>
 3. Enter your payment details and click the Pay button. You're almost there.
-""")
-st.image('images/buy_me_a_coffee2.png', caption='Enter your payment details~')
+<br>
+<a href="https://www.buymeacoffee.com/ssjokelife" target="_blank">
+    <img src="data:image/png;base64,{utils.get_base64_encoded_image('images/buy_me_a_coffee2.png')}" alt="Enter your payment details~">
+</a>
+<br>
+""", unsafe_allow_html=True)
+
 st.markdown("""
 4. Complete the payment on the personal payment page.
 5. Thank you. Your action will be of great help.
 """)
-
